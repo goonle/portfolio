@@ -43,7 +43,7 @@ export default function Education() {
                     University in New Zealand
                   </p>
                   <p className="text-xs text-muted-foreground mt-1">
-                    2023 – Present · New Zealand
+                    2024 – 2026 · New Zealand
                   </p>
                 </div>
 

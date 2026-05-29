@@ -39,16 +39,16 @@ export default function About() {
             className="lg:col-span-3 space-y-5 text-muted-foreground leading-relaxed"
           >
             <p>
-              I'm <span className="text-foreground font-medium">Junhyung Huh</span>, a full-stack developer from South Korea currently based in New Zealand. 
+              I'm <span className="text-foreground font-medium">Junhyung Huh</span>, a full-stack developer from South Korea currently based in New Zealand.
               I moved here to pursue a Master's in Information Technology, driven by a desire to grow both as a developer and as a person.
             </p>
             <p>
-              Over the past three years, I've worked primarily on frontend development using React and Next.js, while also building backend services with Node.js and Spring Boot. 
+              Over the past three years, I've worked primarily on frontend development using React and Next.js, while also building backend services with Node.js and Spring Boot.
               I focus on writing clean code and building systems that are genuinely useful — not just technically interesting.
             </p>
             <p>
-              Lately, I've been diving deeper into <span className="text-foreground font-medium">cloud architecture</span>, <span className="text-foreground font-medium">AI integration</span>, and scalable backend systems. 
-              I'm particularly interested in how AI agents and machine learning can be woven into practical web applications.
+              Lately, I've been expanding my knowledge of cloud architecture, <span className="text-foreground font-medium">scalable backend systems</span>, and <span className="text-foreground font-medium">AI technologies</span> through personal projects and self-study. 
+              I'm curious about how AI agents and machine learning can be used to create useful and accessible web applications.
             </p>
             <p>
               I believe in continuous learning and building things step by step. I'm not trying to claim I know everything — I'd rather show what I've built and what I've learned along the way.

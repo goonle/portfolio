@@ -8,24 +8,47 @@ import { Input } from "@/app/components/ui/Input"
 import { Textarea } from '@/app/components/ui/Textarea';
 import { Button } from '@/app/components/ui/Button';
 import { toast } from 'sonner';
+import { sendEmail } from '@/app/lib/sendEmail';
+
+import emailjs from "@emailjs/browser";
+
+type EmailForm = {
+  name: string,
+  email: string,
+  message: string,
+}
+
+const defaultEmailForm: EmailForm = {
+  name: '', email: '', message: ''
+}
 
 export default function Contact() {
+
   const { ref, isInView } = useInView(0.2);
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+
+  const [form, setForm] = useState(defaultEmailForm);
   const [sending, setSending] = useState(false);
+
 
   const handleSubmit = async (e: React.SubmitEvent) => {
     e.preventDefault();
+    
     if (!form.name || !form.email || !form.message) {
       toast.error('Please fill in all fields');
       return;
     }
     setSending(true);
-    // Simulate sending
-    await new Promise((r) => setTimeout(r, 1500));
-    toast.success('Message sent! I\'ll get back to you soon.');
-    setForm({ name: '', email: '', message: '' });
-    setSending(false);
+    
+    try {
+      const result = await sendEmail(form)
+      toast.success('Message sent! I\'ll get back to you soon.');
+    } catch (e) {
+      toast.error('Error occured.. Please try again.');
+    } finally {
+      setForm({ name: '', email: '', message: ''});
+      setSending(false);
+    }
+
   };
 
   const socials = [
@@ -47,7 +70,7 @@ export default function Contact() {
             Let's connect
           </h2>
           <p className="text-muted-foreground max-w-xl mb-2">
-            I'm always open to discussing new projects, opportunities, or just having a friendly conversation about tech. 
+            I'm always open to discussing new projects, opportunities, or just having a friendly conversation about tech.
             Feel free to reach out!
           </p>
           <div className="w-16 h-1 bg-primary/30 rounded-full mb-10" />
@@ -144,8 +167,8 @@ export default function Contact() {
 
             <div className="p-5 rounded-xl bg-secondary/30 border border-border/30 text-center">
               <p className="text-sm text-muted-foreground">
-                💡 Currently open to <span className="text-foreground font-medium">full-time positions</span>, 
-                <span className="text-foreground font-medium"> freelance work</span>, and 
+                💡 Currently open to <span className="text-foreground font-medium">full-time positions</span>,
+                <span className="text-foreground font-medium"> freelance work</span>, and
                 <span className="text-foreground font-medium"> collaborations</span>.
               </p>
             </div>

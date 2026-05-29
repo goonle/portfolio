@@ -45,8 +45,8 @@ const skillCategories: SkillCategory[] = [
     emoji: '🗄️',
     skills: [
       { name: 'PostgreSQL', level: 75 },
-      { name: 'Redis', level: 60 },
-      { name: 'MongoDB', level: 55 },
+      { name: 'Redis', level: 50 },
+      // { name: 'MongoDB', level: 20 },
     ],
   },
   {
@@ -55,7 +55,7 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'Docker', level: 65 },
       { name: 'Git/GitHub', level: 85 },
-      { name: 'AWS', level: 40 },
+      // { name: 'AWS', level: 40 },
       { name: 'CI/CD', level: 55 },
       { name: 'Vercel', level: 70 },
     ],
@@ -65,9 +65,9 @@ const skillCategories: SkillCategory[] = [
     emoji: '🤖',
     skills: [
       { name: 'AI Integration', level: 55 },
-      { name: 'OpenAI APIs', level: 50 },
+      // { name: 'OpenAI APIs', level: 50 },
       { name: 'ML Concepts', level: 40 },
-      { name: 'Prompt Engineering', level: 60 },
+      { name: 'Prompt Engineering', level: 40 },
     ],
   },
 ];
