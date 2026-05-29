@@ -10,8 +10,6 @@ import { Button } from '@/app/components/ui/Button';
 import { toast } from 'sonner';
 import { sendEmail } from '@/app/lib/sendEmail';
 
-import emailjs from "@emailjs/browser";
-
 type EmailForm = {
   name: string,
   email: string,
