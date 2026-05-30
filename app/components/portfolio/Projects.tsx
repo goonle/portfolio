@@ -14,6 +14,8 @@ type Project = {
     challenges: string,
     learned: string,
     color: string
+    codeUrl: string,
+    demoUrl: string,
 }
 
 const projects: Project[] = [
@@ -34,6 +36,8 @@ const projects: Project[] = [
         learned:
             'Learned how to integrate message queues into a serverless-friendly stack, and the trade-offs between serverless and always-on services.',
         color: 'primary',
+        codeUrl: '',
+        demoUrl: '',
     },
     {
         title: 'AI Fridge Manager',
@@ -52,24 +56,30 @@ const projects: Project[] = [
         learned:
             'Gained hands-on experience integrating AI APIs into real workflows, and understood the importance of data preprocessing for OCR quality.',
         color: 'accent',
+        codeUrl: '',
+        demoUrl: '',
+
     },
     {
         title: 'Cafe Order System',
-        tagline: 'Simple order management for cafes',
+        tagline: 'Simple supplier order management for cafes',
         description:
-            'A practical CRUD application built for a real cafe workflow. Manages vendor orders, item inventory, and generates order messages for suppliers.',
-        techStack: ['React', 'Spring Boot', 'Java', 'PostgreSQL', 'REST API'],
+            'A practical web application built for a real cafe workflow. It helps manage vendors, orderable items, order history, and generates supplier order messages to reduce repetitive manual work.',
+        techStack: ['Next.js', 'React', 'JavaScript', 'PostgreSQL', 'REST API'],
         features: [
-            'Vendor and item management dashboard',
-            'Order history with filtering and search',
+            'Vendor and item management',
+            'Vendor-based order history tracking',
             'One-click message generation for suppliers',
-            'Simple analytics on order frequency',
+            'Reusable order templates for common purchases',
         ],
         challenges:
-            'Understanding real business requirements from a non-technical user and translating them into a clean, usable interface.',
+            'Understanding a real cafe ordering workflow from a non-technical user and translating repetitive manual tasks into a simple, usable web application.',
         learned:
-            'Learned how to build software that genuinely helps someone\'s daily workflow, and the value of simplicity over complexity.',
+            'Learned how to build practical software around a real business workflow, focusing on usability, simplicity, and solving daily operational problems rather than adding unnecessary features.',
         color: 'chart-4',
+        codeUrl: 'https://github.com/goonle/order_history',
+        demoUrl: 'https://order-history-two.vercel.app/',
+
     },
 ];
 
@@ -134,7 +144,7 @@ export default function Projects() {
 
                 {/* Project grid */}
                 <div className="space-y-8">
-                    <AnimatePresence mode="wait">
+                    <AnimatePresence>
                         {filtered.map((project, i) => (
                             <motion.div
                                 key={project.title}

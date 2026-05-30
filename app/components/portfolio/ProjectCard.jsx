@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { LuGithub, LuExternalLink, LuChevronDown, LuChevronUp, LuZap, LuBookOpen} from "react-icons/lu";
+import { LuGithub, LuExternalLink, LuChevronDown, LuChevronUp, LuZap, LuBookOpen } from "react-icons/lu";
 
 export default function ProjectCard({ project, index }) {
     const [expanded, setExpanded] = useState(false);
@@ -28,14 +28,16 @@ export default function ProjectCard({ project, index }) {
 
                     <div className="flex gap-2">
                         <a
-                            href="#"
+                            href={project.codeUrl}
+                            target="_blank"
                             className="inline-flex items-center gap-2 px-4 py-2 text-sm bg-secondary/60 border border-border/50 rounded-lg text-muted-foreground hover:text-foreground hover:border-border transition-all"
                         >
                             <LuGithub className="w-4 h-4" />
                             Code
                         </a>
                         <a
-                            href="#"
+                            href={project.demoUrl}
+                            target="_blank"
                             className="inline-flex items-center gap-2 px-4 py-2 text-sm bg-primary/10 border border-primary/20 rounded-lg text-primary hover:bg-primary/20 transition-all"
                         >
                             <LuExternalLink className="w-4 h-4" />
