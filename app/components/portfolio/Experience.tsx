@@ -21,7 +21,9 @@ const experiences = [
       'Took ownership of frontend implementation (CSS structuring, component modularization) on new client projects after demonstrating strength in this area',
       'Refactored a heavily legacy justification workflow module by identifying repeated UI/logic patterns across features and consolidating them into reusable components — significantly reducing code duplication and improving maintainability, done incrementally alongside ongoing feature work',
       'Operated in a fast-growing, resource-constrained team where productivity was prioritized over rigid structure (no formal test suite, flexible parameter-based logic instead of strict data modeling) — gained firsthand understanding of the tradeoffs this creates at scale, which now informs my emphasis on test coverage and data modeling in personal projects',
-      `Collaborated with an external client on 3D visualization requirements outside the team's core frontend strength, adapting and integrating externally provided code`
+      `Collaborated with an external client on 3D visualization requirements outside the team's core frontend strength, adapting and integrating externally provided code`,
+      'Used Jenkins for CI on Java/Spring Boot services, with automated deployment to development environments (production deployments were handled by senior engineers)',
+      ` Participated in an early-stage initiative to containerize the application with Docker, driven by growing client demand for AI features that required more consistent, portable environments — before I left the company`
     ],
   },
   {
@@ -32,6 +34,8 @@ const experiences = [
     type: 'Graduate Student',
     description: [
       'Pursuing Master of Information Technology with a focus on serverless architectures and asynchronous systems',
+      'Participated in Unitec GenAI Hackathon (Oct 2024), contributing to a team concept using AI-driven route optimization to connect near-closing restaurants with food donation recipients',
+      "Participated in academyEX AI Hackathon (2025), focused on AI applications for UN Sustainable Development Goals — contributed to concept and system design for an AI-powered fridge management system using LLM and OCR, and helped generate frontend code with AI tools while a teammate led backend architecture. Encountered real-world AI limitations (inconsistent OCR accuracy, high LLM latency) and made the practical call to use mock data for the live demo",
       'Working on academic projects involving cloud computing and AI integration',
       'Building personal projects to explore new technologies and deepen practical skills',
       'Engaging with the local developer community and attending tech meetups',

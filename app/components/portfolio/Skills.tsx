@@ -55,7 +55,7 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'Docker', level: 40 },
       { name: 'Git/GitHub', level: 85 },
-      { name: 'CI/CD', level: 60 },
+      { name: 'CI/CD', level: 40 },
       { name: 'Vercel', level: 40 },
     ],
   },
@@ -63,7 +63,7 @@ const skillCategories: SkillCategory[] = [
     title: 'AI & Tools',
     emoji: '🤖',
     skills: [
-      { name: 'AI Integration', level: 40 },
+      { name: 'AI Integration', level: 25 },
       { name: 'ML Concepts', level: 20 },
       { name: 'Prompt Engineering', level: 20 },
     ],
