@@ -19,47 +19,47 @@ type Project = {
 }
 
 const projects: Project[] = [
-    {
-        title: 'RoutineFlow',
-        tagline: 'Daily routine tracking web application',
-        description:
-            'A web app for building and tracking daily routines. Designed around a hybrid serverless architecture with background job processing for reminders and data aggregation.',
-        techStack: ['Next.js', 'PostgreSQL', 'BullMQ', 'Redis', 'TypeScript', 'Tailwind CSS'],
-        features: [
-            'Custom routine builder with drag-and-drop ordering',
-            'Background job processing for daily summaries',
-            'Streak tracking and habit analytics',
-            'Responsive, lightweight UX',
-        ],
-        challenges:
-            'Handling background job reliability and retry logic with BullMQ, and designing the serverless + persistent worker hybrid architecture.',
-        learned:
-            'Learned how to integrate message queues into a serverless-friendly stack, and the trade-offs between serverless and always-on services.',
-        color: 'primary',
-        codeUrl: '',
-        demoUrl: '',
-    },
-    {
-        title: 'AI Fridge Manager',
-        tagline: 'OCR-based grocery & food management',
-        description:
-            'A mobile-first concept app that scans grocery receipts using OCR, tracks food items and expiry dates, and provides AI-assisted recommendations to reduce food waste.',
-        techStack: ['React', 'Python', 'OpenAI API', 'OCR', 'Node.js', 'PostgreSQL'],
-        features: [
-            'Receipt scanning with OCR text extraction',
-            'Automatic food item categorization',
-            'Expiry date tracking and notifications',
-            'AI-powered recipe suggestions based on available items',
-        ],
-        challenges:
-            'OCR accuracy on messy receipt formats, and building a useful AI recommendation pipeline that doesn\'t feel gimmicky.',
-        learned:
-            'Gained hands-on experience integrating AI APIs into real workflows, and understood the importance of data preprocessing for OCR quality.',
-        color: 'accent',
-        codeUrl: '',
-        demoUrl: '',
+    // {
+    //     title: 'RoutineFlow',
+    //     tagline: 'Daily routine tracking web application',
+    //     description:
+    //         'A web app for building and tracking daily routines. Designed around a hybrid serverless architecture with background job processing for reminders and data aggregation.',
+    //     techStack: ['Next.js', 'PostgreSQL', 'BullMQ', 'Redis', 'TypeScript', 'Tailwind CSS'],
+    //     features: [
+    //         'Custom routine builder with drag-and-drop ordering',
+    //         'Background job processing for daily summaries',
+    //         'Streak tracking and habit analytics',
+    //         'Responsive, lightweight UX',
+    //     ],
+    //     challenges:
+    //         'Handling background job reliability and retry logic with BullMQ, and designing the serverless + persistent worker hybrid architecture.',
+    //     learned:
+    //         'Learned how to integrate message queues into a serverless-friendly stack, and the trade-offs between serverless and always-on services.',
+    //     color: 'primary',
+    //     codeUrl: '',
+    //     demoUrl: '',
+    // },
+    // {
+    //     title: 'AI Fridge Manager',
+    //     tagline: 'OCR-based grocery & food management',
+    //     description:
+    //         'A mobile-first concept app that scans grocery receipts using OCR, tracks food items and expiry dates, and provides AI-assisted recommendations to reduce food waste.',
+    //     techStack: ['React', 'Python', 'OpenAI API', 'OCR', 'Node.js', 'PostgreSQL'],
+    //     features: [
+    //         'Receipt scanning with OCR text extraction',
+    //         'Automatic food item categorization',
+    //         'Expiry date tracking and notifications',
+    //         'AI-powered recipe suggestions based on available items',
+    //     ],
+    //     challenges:
+    //         'OCR accuracy on messy receipt formats, and building a useful AI recommendation pipeline that doesn\'t feel gimmicky.',
+    //     learned:
+    //         'Gained hands-on experience integrating AI APIs into real workflows, and understood the importance of data preprocessing for OCR quality.',
+    //     color: 'accent',
+    //     codeUrl: '',
+    //     demoUrl: '',
 
-    },
+    // },
     {
         title: 'Cafe Order System',
         tagline: 'Simple supplier order management for cafes',
