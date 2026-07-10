@@ -64,8 +64,8 @@ const skillCategories: SkillCategory[] = [
     title: 'AI & Tools',
     emoji: '🤖',
     skills: [
-      { name: 'AI Integration', level: 55 },
-      { name: 'ML Concepts', level: 40 },
+      { name: 'AI Integration', level: 40 },
+      { name: 'ML Concepts', level: 20 },
       { name: 'Prompt Engineering', level: 20 },
     ],
   },

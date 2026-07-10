@@ -8,16 +8,20 @@ import { MapPin, Calendar } from 'lucide-react';
 const experiences = [
   {
     role: 'Full-Stack Developer',
-    company: 'Software Company',
+    company: ' Security Dashboard Platform for Enterprise Clients',
     location: 'Seoul, South Korea',
     period: '2021 – 2024',
     type: 'Full-time',
+    members: 'Worked as a junior developer in a security-focused engineering team of 10, mentored by principal engineers specializing in security, systems, and big data — within a larger 40-person organization spanning engineering, data operations, and sales.',
     description: [
-    'Built and maintained B2B web applications with a focus on MVP delivery and practical business needs',
-    'Developed frontend interfaces using JavaScript, jQuery, DevExtreme, HTML, and CSS',
-    'Built and customized Splunk-based applications, including dashboards, search features, and user-facing interfaces',
-    'Supported backend development and maintenance using Python with CherryPy and SQL-based systems',
-    'Worked closely with team members to turn business requirements into working software solutions',
+      'Built and maintained a third-party application on top of Splunk, working within its dashboard-only extension constraints by embedding a custom-built app via iframe',
+      'Developed backend services in Python (CherryPy) to query and process large-scale security log data through the Splunk SDK, transforming raw data into actionable insights for security officers',
+      'Designed and implemented a separate Java Spring Boot application to handle the report justification/approval workflow for staff without direct Splunk access, including SSO integration for enterprise banking clients — validating employee IDs against internal records and enforcing report-level access control via email-based permission mapping',
+      'Worked closely with senior engineers to understand the reasoning behind authentication and authorization design decisions, rather than just implementing to spec — this shaped how I approach new codebases today',
+      'Took ownership of frontend implementation (CSS structuring, component modularization) on new client projects after demonstrating strength in this area',
+      'Refactored a heavily legacy justification workflow module by identifying repeated UI/logic patterns across features and consolidating them into reusable components — significantly reducing code duplication and improving maintainability, done incrementally alongside ongoing feature work',
+      'Operated in a fast-growing, resource-constrained team where productivity was prioritized over rigid structure (no formal test suite, flexible parameter-based logic instead of strict data modeling) — gained firsthand understanding of the tradeoffs this creates at scale, which now informs my emphasis on test coverage and data modeling in personal projects',
+      `Collaborated with an external client on 3D visualization requirements outside the team's core frontend strength, adapting and integrating externally provided code`
     ],
   },
   {
@@ -91,6 +95,9 @@ export default function Experience() {
                       </span>
                     </div>
                   </div>
+                  <p className="text-muted-foreground leading-relaxed mb-5">
+                    {exp.members}
+                  </p>
 
                   <ul className="space-y-2">
                     {exp.description.map((line) => (
