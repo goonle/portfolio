@@ -11,13 +11,21 @@ type Project = {
     description: string,
     techStack: String[],
     features: String[],
-    challenges: string,
-    learned: string,
+    addtionalInfo: AdditaionalInfo,
+    // challenges: string,
+    // learned: string,
     color: string
     codeUrl: string,
     demoUrl: string,
 }
 
+type AdditaionalInfo = {
+    summary: string,
+    techChoice: string,
+    problems: string,
+    decisions: String[],
+    currentStatus : string
+}
 const projects: Project[] = [
     // {
     //     title: 'RoutineFlow',
@@ -72,10 +80,17 @@ const projects: Project[] = [
             'One-click message generation for suppliers',
             'Reusable order templates for common purchases',
         ],
-        challenges:
-            'Understanding a real cafe ordering workflow from a non-technical user and translating repetitive manual tasks into a simple, usable web application.',
-        learned:
-            'Learned how to build practical software around a real business workflow, focusing on usability, simplicity, and solving daily operational problems rather than adding unnecessary features.',
+        addtionalInfo: {
+            summary: 'This was a self-initiated project. I noticed a repetitive pain point at a cafe and proposed building a lightweight tool for it, rather than responding to a formal request.',
+            techChoice: 'I chose Next.js on Vercel with PostgreSQL specifically for zero-cost, zero-maintenance deployment — no backend server to manage, minimal ongoing changes needed once live. Since this was an unpaid side project for a small business, keeping infrastructure and operational cost at zero was a hard requirement, not just a preference.',
+            problems: `The real complexity wasn't the code — it was the vendor landscape. The cafe orders from 10+ suppliers (straws/napkins, food, syrup, coffee beans, matcha powder, etc.), and each vendor expects a different ordering channel — some by text, some by email, some through their own app. There's no single integration point.`,
+            decisions: [
+                'Originally planned SMS-based ordering, but dropped it after finding (a) per-message costs, and (b) NZ regulations restricting personal numbers from sending business SMS from a PC',
+                'Also ruled out direct email automation due to handling personal/business contact data without a clear need',
+                `Landed on a simpler, safer scope for v1: store each vendor's items in the DB, and auto-generate a formatted order message (with reusable header/footer templates) that the user copies and sends manually through whatever channel that vendor uses`
+            ],
+            currentStatus: 'Inventory tracking was a known future need (the cafe mentioned checking stock daily) but I deliberately left it out of v1 to keep the first version shippable and low-risk.'
+        },
         color: 'chart-4',
         codeUrl: 'https://github.com/goonle/order_history',
         demoUrl: 'https://order-history-two.vercel.app/',

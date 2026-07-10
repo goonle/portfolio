@@ -72,7 +72,7 @@ export default function ProjectCard({ project, index }) {
                     <ul className="grid sm:grid-cols-2 gap-2">
                         {project.features.map((f) => (
                             <li key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
-                                <span className="text-primary mt-1.5 shrink-0">▸</span>
+                                <span className="text-primary shrink-0">▸</span>
                                 {f}
                             </li>
                         ))}
@@ -92,12 +92,20 @@ export default function ProjectCard({ project, index }) {
                 {expanded && (
                     <div className="mt-4 pt-4 border-t border-border/50 space-y-4">
                         <div>
-                            <p className="text-sm font-semibold text-foreground mb-1">🔧 Challenges</p>
-                            <p className="text-sm text-muted-foreground">{project.challenges}</p>
-                        </div>
-                        <div>
-                            <p className="text-sm font-semibold text-foreground mb-1">📚 What I Learned</p>
-                            <p className="text-sm text-muted-foreground">{project.learned}</p>
+                            <p className="text-sm font-semibold text-foreground mb-1">🔧 Challenges & 📚 Learnings</p>
+                            <p className="text-sm text-muted-foreground">{project.addtionalInfo.summary}</p>
+                            <p className="text-sm font-semibold text-muted-foreground mt-1 mb-1">Tech Choice</p>
+                            <p className="text-sm text-muted-foreground">{project.addtionalInfo.techChoice}</p>
+                            <p className="text-sm font-semibold text-muted-foreground mt-1 mb-1">Scoping decisions</p>
+                            <ul className="grid gap-2">
+                                {project.addtionalInfo.decisions.map((f) => (
+                                    <li key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                        <span className="text-primary shrink-0">▸</span>
+                                        {f}
+                                    </li>
+                                ))}
+                            </ul>
+                            <p className="text-sm text-muted-foreground">{project.currentStatus}</p>
                         </div>
                     </div>
                 )}
