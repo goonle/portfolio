@@ -7,7 +7,7 @@ import { Code2, GraduationCap, Globe, Lightbulb } from 'lucide-react';
 
 const highlights = [
   { icon: Code2, label: '3+ Years', desc: 'Development Experience' },
-  { icon: Globe, label: 'Full-Stack', desc: '70% Frontend · 30% Backend' },
+  { icon: Globe, label: 'Full-Stack', desc: '30% Frontend · 70% Backend' },
   { icon: GraduationCap, label: "Master's", desc: 'IT in New Zealand' },
   { icon: Lightbulb, label: 'AI & Cloud', desc: 'Current Focus Areas' },
 ];
@@ -43,15 +43,13 @@ export default function About() {
               I moved here to pursue a Master's in Information Technology, driven by a desire to grow both as a developer and as a person.
             </p>
             <p>
-              Over the past three years, I've worked primarily on frontend development using React and Next.js, while also building backend services with Node.js and Spring Boot.
-              I focus on writing clean code and building systems that are genuinely useful — not just technically interesting.
+              Over the past three years, I've worked as a full-stack developer building an enterprise security dashboard platform — primarily in Python (CherryPy) for backend services processing large-scale security data, and Java (Spring Boot) for authentication and workflow systems
             </p>
             <p>
-              Lately, I've been expanding my knowledge of cloud architecture, <span className="text-foreground font-medium">scalable backend systems</span>, and <span className="text-foreground font-medium">AI technologies</span> through personal projects and self-study. 
-              I'm curious about how AI agents and machine learning can be used to create useful and accessible web applications.
+              Along the way, I've taken ownership of frontend structuring and CSS modularization, and I'm now expanding into modern frontend frameworks like React and Next.js through personal projects.
             </p>
             <p>
-              I believe in continuous learning and building things step by step. I'm not trying to claim I know everything — I'd rather show what I've built and what I've learned along the way.
+              I care about writing code I can fully explain and defend — not just code that works.
             </p>
           </motion.div>
 

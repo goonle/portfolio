@@ -63,7 +63,7 @@ export default function Hero() {
                         transition={{ delay: 0.45 }}
                         className="font-mono text-sm text-primary/80"
                     >
-                        React · TypeScript · Node.js · Python · PostgreSQL
+                        Python · Java/Spring Boot · PostgreSQL · React · TypeScript
                     </motion.p>
 
                     {/* CTA Buttons */}
