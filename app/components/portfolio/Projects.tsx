@@ -27,26 +27,33 @@ type AdditaionalInfo = {
     currentStatus : string
 }
 const projects: Project[] = [
-    // {
-    //     title: 'RoutineFlow',
-    //     tagline: 'Daily routine tracking web application',
-    //     description:
-    //         'A web app for building and tracking daily routines. Designed around a hybrid serverless architecture with background job processing for reminders and data aggregation.',
-    //     techStack: ['Next.js', 'PostgreSQL', 'BullMQ', 'Redis', 'TypeScript', 'Tailwind CSS'],
-    //     features: [
-    //         'Custom routine builder with drag-and-drop ordering',
-    //         'Background job processing for daily summaries',
-    //         'Streak tracking and habit analytics',
-    //         'Responsive, lightweight UX',
-    //     ],
-    //     challenges:
-    //         'Handling background job reliability and retry logic with BullMQ, and designing the serverless + persistent worker hybrid architecture.',
-    //     learned:
-    //         'Learned how to integrate message queues into a serverless-friendly stack, and the trade-offs between serverless and always-on services.',
-    //     color: 'primary',
-    //     codeUrl: '',
-    //     demoUrl: '',
-    // },
+    {
+        title: 'RoutineFlow',
+        tagline: 'Daily routine tracking web app with a C#/.NET Core backend',
+        description:
+            'A routine and habit tracking application. Originally designed and built as a Next.js full-stack app, then re-architected into a C#/.NET Core MVC backend — I directed the architecture and translated the original design into .NET, using AI-assisted development to implement the C# code while reviewing every generated piece myself.',
+        techStack: ['Next.js', 'React', 'TypeScript', 'C#', '.NET Core', 'Entity Framework Core', 'JWT'],
+        features: [
+            'MVC-structured backend translated from an original Next.js design',
+            'EF Core data modeling with composite indexes',
+            'JWT-based authentication',
+            'Separate frontend (Next.js/React) and backend (C#/.NET Core) repositories',
+        ],
+        addtionalInfo: {
+            summary: 'This started as a Next.js side project. I later chose to rebuild the backend in C#/.NET Core to deliberately push myself into a stack more aligned with NZ backend hiring, translating the MVC structure and data model I\'d already designed rather than starting from scratch.',
+            techChoice: 'I used AI-assisted development to implement the C# code, but the architecture — MVC structure, EF Core entity/DTO separation, JWT auth flow — was my own design carried over from the original Next.js version. My Java background made reading and reasoning about the generated C# straightforward, since the OOP model is very similar.',
+            problems: 'The main challenge wasn\'t writing C# syntax, it was making sure I actually understood every architectural decision in the generated code rather than accepting it as a black box — so I went through EF Core relationships, DTO/Entity separation, and JWT token handling piece by piece and questioned each one.',
+            decisions: [
+                'Chose to rebuild in C#/.NET Core rather than continuing in Next.js, specifically to build backend depth in a stack commonly used in NZ enterprise environments',
+                'Kept the frontend and backend as separate repositories to mirror a realistic full-stack project structure',
+            ],
+            currentStatus: 'Backend architecture and core flows are implemented; ongoing work is focused on deepening my own hands-on C# fluency alongside the AI-assisted implementation.'
+        },
+        color: 'primary',
+        codeUrl: 'https://github.com/goonle/routineFlow_backend',
+        frontendUrl: 'https://github.com/goonle/routineFlow_frontend',
+        demoUrl: '',
+    },
     // {
     //     title: 'AI Fridge Manager',
     //     tagline: 'OCR-based grocery & food management',
