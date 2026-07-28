@@ -51,8 +51,7 @@ const projects: Project[] = [
         },
         color: 'primary',
         codeUrl: 'https://github.com/goonle/routineFlow_backend',
-        frontendUrl: 'https://github.com/goonle/routineFlow_frontend',
-        demoUrl: '',
+        demoUrl: 'https://routine-flow-frontend.vercel.app/',
     },
     // {
     //     title: 'AI Fridge Manager',
