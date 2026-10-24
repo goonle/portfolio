@@ -143,7 +143,7 @@ export default function Projects() {
                 </motion.div>
 
                 {/* Filters */}
-                <motion.div
+                {/* <motion.div
                     initial={{ opacity: 0 }}
                     animate={isInView ? { opacity: 1 } : {}}
                     transition={{ delay: 0.2 }}
@@ -161,7 +161,7 @@ export default function Projects() {
                             {f}
                         </button>
                     ))}
-                </motion.div>
+                </motion.div> */}
 
                 {/* Project grid */}
                 <div className="space-y-8">

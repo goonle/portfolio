@@ -4,98 +4,43 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from '@/app/hooks/useInView';
 
-type Skill = {
-    name: string,
-    level : number
-}
-
 type SkillCategory = {
     title: string,
     emoji: string,
-    skills: Skill[] 
+    skills: string[]
 }
 
 const skillCategories: SkillCategory[] = [
   {
     title: 'Frontend',
     emoji: '🎨',
-    skills: [
-      { name: 'React', level: 40 },
-      { name: 'Next.js', level: 50 },
-      { name: 'TypeScript', level: 40 },
-      { name: 'JavaScript', level: 70 },
-      { name: 'Jquery', level: 70 },
-      { name: 'HTML/CSS', level: 70 },
-      { name: 'Tailwind CSS', level: 40 },
-    ],
+    skills: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'jQuery', 'HTML/CSS', 'Tailwind CSS'],
   },
   {
     title: 'Backend',
     emoji: '⚙️',
-    skills: [
-      { name: 'Node.js', level: 30 },
-      { name: 'Spring Boot', level: 60 },
-      { name: 'Java', level: 70 },
-      { name: 'Python', level: 70 },
-      { name: 'REST APIs', level: 80 },
-    ],
+    skills: ['Node.js', 'Spring Boot', 'Java', 'Python', 'REST APIs'],
   },
   {
     title: 'Database',
     emoji: '🗄️',
     skills: [
-      { name: 'PostgreSQL', level: 75 },
-      { name: 'Redis', level: 20 },
-      { name: 'MongoDB', level: 20 },
+      'PostgreSQL',
+      'Redis',
+      // 'MongoDB',
     ],
   },
   {
     title: 'DevOps & Cloud',
     emoji: '☁️',
-    skills: [
-      { name: 'Docker', level: 40 },
-      { name: 'Git/GitHub', level: 85 },
-      { name: 'CI/CD', level: 40 },
-      { name: 'Vercel', level: 40 },
-    ],
+    skills: ['Docker', 'Git/GitHub', 'CI/CD', 'Vercel'],
   },
-  {
-    title: 'AI & Tools',
-    emoji: '🤖',
-    skills: [
-      { name: 'AI Integration', level: 25 },
-      { name: 'ML Concepts', level: 20 },
-      { name: 'Prompt Engineering', level: 20 },
-    ],
-  },
+  // {
+  //   title: 'AI & Tools',
+  //   emoji: '🤖',
+  //   skills: ['AI Integration', 'ML Concepts', 'Prompt Engineering'],
+  // },
 ];
-
-
-type SkillBarProps = {
-    name: string,
-    level: number,
-    delay: number
-}
-function SkillBar({ name, level, delay }: SkillBarProps) {
-  const { ref, isInView } = useInView(0.3);
-
-  return (
-    <div ref={ref} className="space-y-1.5">
-      <div className="flex justify-between items-center">
-        <span className="text-sm text-foreground font-medium">{name}</span>
-        <span className="text-xs text-muted-foreground font-mono">{level}%</span>
-      </div>
-      <div className="h-1.5 bg-secondary rounded-full overflow-hidden">
-        <motion.div
-          initial={{ width: 0 }}
-          animate={isInView ? { width: `${level}%` } : { width: 0 }}
-          transition={{ duration: 0.8, delay: delay * 0.05, ease: 'easeOut' }}
-          className="h-full rounded-full bg-gradient-to-r from-primary to-primary/70"
-        />
-      </div>
-    </div>
-  );
-}
 
 export default function Skills() {
   const { ref, isInView } = useInView(0.1);
@@ -112,9 +57,6 @@ export default function Skills() {
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Tech stack & skills
           </h2>
-          <p className="text-muted-foreground max-w-xl mb-2">
-            Levels reflect honest self-assessment, not perfection. I value growth over claiming mastery.
-          </p>
           <div className="w-16 h-1 bg-primary/30 rounded-full mb-10" />
         </motion.div>
 
@@ -131,9 +73,14 @@ export default function Skills() {
                 <span className="text-lg">{cat.emoji}</span>
                 <h3 className="text-foreground font-semibold">{cat.title}</h3>
               </div>
-              <div className="space-y-4">
-                {cat.skills.map((skill: Skill, i : number) => (
-                  <SkillBar key={skill.name} {...skill} delay={catIdx * 3 + i} />
+              <div className="flex flex-wrap gap-2">
+                {cat.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1 rounded-full bg-secondary text-sm text-foreground font-medium"
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </motion.div>

@@ -51,7 +51,7 @@ export default function Contact() {
 
   const socials = [
     { icon: LuGithub, label: 'GitHub', href: 'https://github.com/goonle', username: 'github.com/goonle' },
-    { icon: LuLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/junhyung-huh-165019266/', username: 'https://www.linkedin.com/in/junhyung-huh-165019266' },
+    { icon: LuLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/junhyung-huh', username: 'linkedin.com/in/junhyung-huh' },
     { icon: LuMail, label: 'Email', href: 'mailto:strongwill.jun@gmail.com', username: 'strongwill.jun@gmail.com' },
   ];
 

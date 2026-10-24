@@ -17,8 +17,8 @@ export default function Footer() {
 
           <div className="flex items-center gap-4">
             {[
-              { icon: LuGithub, href: 'https://github.com' },
-              { icon: LuLinkedin, href: 'https://linkedin.com' },
+              { icon: LuGithub, href: 'https://github.com/goonle' },
+              { icon: LuLinkedin, href: 'https://www.linkedin.com/in/junhyung-huh' },
               { icon: LuMail, href: 'mailto:junhyung.huh@email.com' },
             ].map(({ icon: Icon, href }) => (
               <a

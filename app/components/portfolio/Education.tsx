@@ -40,7 +40,7 @@ export default function Education() {
                     Master of Information Technology
                   </h3>
                   <p className="text-primary/80 font-medium text-sm">
-                    University in New Zealand
+                    Auckland Institute of Studies
                   </p>
                   <p className="text-xs text-muted-foreground mt-1">
                     2024 – 2026 · New Zealand

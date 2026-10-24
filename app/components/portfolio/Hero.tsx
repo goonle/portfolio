@@ -96,8 +96,8 @@ export default function Hero() {
                         className="flex items-center justify-center gap-4 pt-6"
                     >
                         {[
-                            { icon: LuGithub, href: 'https://github.com', label: 'GitHub' },
-                            { icon: LuLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+                            { icon: LuGithub, href: 'https://github.com/goonle', label: 'GitHub' },
+                            { icon: LuLinkedin, href: 'https://www.linkedin.com/in/junhyung-huh', label: 'LinkedIn' },
                             { icon: LuMail, href: '#contact', label: 'Email' },
                         ].map(({ icon: Icon, href, label }) => (
                             <a
