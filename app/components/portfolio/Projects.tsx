@@ -16,7 +16,14 @@ type Project = {
     // learned: string,
     color: string
     codeUrl: string,
-    demoUrl: string,
+    demoUrl?: string,
+    aiUsage?: AiUsage,
+}
+
+type AiUsage = {
+    summary: string,
+    usedFor: string[],
+    notUsedFor: string[],
 }
 
 type AdditaionalInfo = {
@@ -27,6 +34,47 @@ type AdditaionalInfo = {
     currentStatus : string
 }
 const projects: Project[] = [
+    {
+        title: 'Household Budget Tracker',
+        tagline: 'Spreadsheet-to-web budget app with a Java/Spring Boot backend',
+        description:
+            'A personal budget tracker that replaces the weekly spreadsheet I\'ve been using for household spending. Bank CSV exports are uploaded, matched to merchants, auto-categorised and checked for duplicates before saving. The core logic is written by hand on purpose — AI is used only for boilerplate, code review and planning.',
+        techStack: ['Java 25', 'Spring Boot 4', 'Spring Data JPA', 'PostgreSQL', 'Flyway', 'Testcontainers', 'Docker', 'GitHub Actions', 'GCP'],
+        features: [
+            'Two-level category tree queried with PostgreSQL recursive CTEs',
+            'Versioned schema and seed data with Flyway migrations',
+            'Repository tests against a real Postgres via Testcontainers',
+            'CI/CD: test → Docker image → GHCR → GCP VM deploy with health check',
+        ],
+        aiUsage: {
+            summary: 'This project is a deliberate step away from "vibe coding". I use Claude Code as an assistant, not as the author: settings.json limits what it is allowed to do, and CLAUDE.md gives it the same project rules and context every session, so its suggestions stay consistent with my design. The core logic is written by hand. The goal is to make sure I still know what I\'m doing without AI.',
+            usedFor: [
+                'Boilerplate (entities, config, Gradle/CI setup)',
+                'Code review and catching bugs in my own code',
+                'Planning and looking up unfamiliar APIs',
+                'Working within permissions set in settings.json and rules set in CLAUDE.md',
+            ],
+            notUsedFor: [
+                'Core business logic (category tree, import and duplicate rules)',
+                'Design decisions, each one reasoned through and documented first',
+                'Any code change without my explicit approval',
+            ],
+        },
+        addtionalInfo: {
+            summary: 'I\'ve tracked my household budget in a spreadsheet with weekly rows and category columns. Moving it to a web app let me fix what the spreadsheet couldn\'t: a single "Luxury" catch-all column made it hard to tell what was actually driving budget overruns.',
+            techChoice: 'Java and Spring Boot to deepen my backend skills in a stack widely used in NZ enterprise environments. PostgreSQL because the category queries rely on recursive CTEs and arrays, which is also why tests run on a real Postgres through Testcontainers instead of H2. The app runs on a GCP e2-micro VM with Neon as managed Postgres, keeping the VM\'s 1 GB of memory for the app and the cost near zero.',
+            problems: 'Bank CSV exports can contain identical lines (e.g. two $5 coffees on the same day), so a simple hash can\'t tell a real duplicate from a repeat purchase. I designed an occurrence-number rule — the nth time a normalised line appears in a file — plus continuity checks that warn about date gaps, overlaps with no matches, and lines that failed to parse, so no row is dropped silently.',
+            decisions: [
+                'Categories separate what was bought (Groceries vs. Outside Food) from why, instead of one "Luxury" catch-all',
+                'Recurring payments normalised to a weekly equivalent to match the original weekly spreadsheet, with a history table so price increases don\'t distort past weeks',
+                'Money stored as cents in a long and parsed with BigDecimal — never double — to avoid rounding errors',
+                'Thin controllers and services that return DTOs, so the Thymeleaf UI can later be swapped for React without touching business logic',
+            ],
+            currentStatus: 'The foundation is done: schema, category API, tests and automated deployment to GCP. CSV import and merchant matching are in progress. No public demo yet — HTTPS and authentication come before any real bank data goes online.'
+        },
+        color: 'accent',
+        codeUrl: 'https://github.com/goonle/budget_tracker',
+    },
     {
         title: 'RoutineFlow',
         tagline: 'Daily routine tracking web app with a C#/.NET Core backend',
