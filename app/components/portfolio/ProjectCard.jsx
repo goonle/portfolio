@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { LuGithub, LuExternalLink, LuChevronDown, LuChevronUp, LuZap, LuBookOpen } from "react-icons/lu";
+import { LuGithub, LuExternalLink, LuChevronDown, LuChevronUp, LuZap, LuBookOpen, LuBot, LuCheck, LuPenLine } from "react-icons/lu";
 
 export default function ProjectCard({ project, index }) {
     const [expanded, setExpanded] = useState(false);
@@ -35,14 +35,16 @@ export default function ProjectCard({ project, index }) {
                             <LuGithub className="w-4 h-4" />
                             Code
                         </a>
-                        <a
-                            href={project.demoUrl}
-                            target="_blank"
-                            className="inline-flex items-center gap-2 px-4 py-2 text-sm bg-primary/10 border border-primary/20 rounded-lg text-primary hover:bg-primary/20 transition-all"
-                        >
-                            <LuExternalLink className="w-4 h-4" />
-                            Demo
-                        </a>
+                        {project.demoUrl && (
+                            <a
+                                href={project.demoUrl}
+                                target="_blank"
+                                className="inline-flex items-center gap-2 px-4 py-2 text-sm bg-primary/10 border border-primary/20 rounded-lg text-primary hover:bg-primary/20 transition-all"
+                            >
+                                <LuExternalLink className="w-4 h-4" />
+                                Demo
+                            </a>
+                        )}
                     </div>
                 </div>
 
@@ -79,6 +81,47 @@ export default function ProjectCard({ project, index }) {
                     </ul>
                 </div>
 
+                {/* AI usage */}
+                {project.aiUsage && (
+                    <div className="mb-4 p-4 rounded-lg bg-primary/5 border border-primary/15">
+                        <div className="flex items-center gap-2 mb-2">
+                            <LuBot className="w-4 h-4 text-primary" />
+                            <span className="text-sm font-semibold text-foreground">How I use AI here</span>
+                        </div>
+                        <p className="text-sm text-muted-foreground mb-3">{project.aiUsage.summary}</p>
+                        <div className="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <p className="flex items-center gap-1.5 text-xs font-semibold text-foreground mb-2">
+                                    <LuCheck className="w-3.5 h-3.5 text-primary" />
+                                    AI used for
+                                </p>
+                                <ul className="space-y-1.5">
+                                    {project.aiUsage.usedFor.map((f) => (
+                                        <li key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                            <span className="text-primary shrink-0">▸</span>
+                                            {f}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div>
+                                <p className="flex items-center gap-1.5 text-xs font-semibold text-foreground mb-2">
+                                    <LuPenLine className="w-3.5 h-3.5 text-primary" />
+                                    Written by me
+                                </p>
+                                <ul className="space-y-1.5">
+                                    {project.aiUsage.notUsedFor.map((f) => (
+                                        <li key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                            <span className="text-primary shrink-0">▸</span>
+                                            {f}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
                 {/* Expandable details */}
                 <button
                     onClick={() => setExpanded(!expanded)}
@@ -96,6 +139,8 @@ export default function ProjectCard({ project, index }) {
                             <p className="text-sm text-muted-foreground">{project.addtionalInfo.summary}</p>
                             <p className="text-sm font-semibold text-muted-foreground mt-1 mb-1">Tech Choice</p>
                             <p className="text-sm text-muted-foreground">{project.addtionalInfo.techChoice}</p>
+                            <p className="text-sm font-semibold text-muted-foreground mt-1 mb-1">Main challenge</p>
+                            <p className="text-sm text-muted-foreground">{project.addtionalInfo.problems}</p>
                             <p className="text-sm font-semibold text-muted-foreground mt-1 mb-1">Scoping decisions</p>
                             <ul className="grid gap-2">
                                 {project.addtionalInfo.decisions.map((f) => (
@@ -105,7 +150,8 @@ export default function ProjectCard({ project, index }) {
                                     </li>
                                 ))}
                             </ul>
-                            <p className="text-sm text-muted-foreground">{project.currentStatus}</p>
+                            <p className="text-sm font-semibold text-muted-foreground mt-1 mb-1">Current status</p>
+                            <p className="text-sm text-muted-foreground">{project.addtionalInfo.currentStatus}</p>
                         </div>
                     </div>
                 )}
