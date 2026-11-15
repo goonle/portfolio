@@ -12,28 +12,34 @@ type SkillCategory = {
 
 const skillCategories: SkillCategory[] = [
   {
-    title: 'Frontend',
-    emoji: '🎨',
-    skills: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'jQuery', 'HTML/CSS', 'Tailwind CSS'],
+    title: 'Languages',
+    emoji: '💻',
+    skills: ['Java', 'Python', 'JavaScript', 'SQL'],
   },
   {
-    title: 'Backend',
-    emoji: '⚙️',
-    skills: ['Node.js', 'Spring Boot', 'Java', 'Python', 'REST APIs'],
+    title: 'Frameworks & Libraries',
+    emoji: '🧩',
+    skills: ['Spring Boot', 'MyBatis', 'CherryPy', 'React', 'jQuery', 'DevExtreme'],
   },
   {
-    title: 'Database',
+    title: 'Databases & Analytics',
     emoji: '🗄️',
-    skills: [
-      'PostgreSQL',
-      'Redis',
-      // 'MongoDB',
-    ],
+    skills: ['PostgreSQL', 'Splunk (SPL)'],
   },
   {
-    title: 'DevOps & Cloud',
-    emoji: '☁️',
-    skills: ['Docker', 'Git/GitHub', 'CI/CD', 'Vercel'],
+    title: 'Security & Identity',
+    emoji: '🔐',
+    skills: ['SSO integration (XML-based redirect flow)', 'Session-based authentication'],
+  },
+  {
+    title: 'Developer Tools',
+    emoji: '🛠️',
+    skills: ['Git', 'Docker', 'Jenkins'],
+  },
+  {
+    title: 'Operating Systems',
+    emoji: '🐧',
+    skills: ['Linux'],
   },
   // {
   //   title: 'AI & Tools',
